@@ -1,0 +1,30 @@
+{
+  "name": "Existing Dockerfile",
+  "build": {
+    // Sets the run context to one level up instead of the .devcontainer folder.
+    "context": "../",
+    // Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
+    "dockerfile": "Dockerfile"
+  },
+  "postAttachCommand": "npm i && npm run dev",
+  "runArgs": ["-p=24678:24678"],
+  // "postStartCommand": "npm i && npm run dev",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+		"svelte.svelte-vscode",
+		"esbenp.prettier-vscode"
+	],
+      "settings": {
+        "svelte.enable-ts-plugin": true,
+        "prettier.prettierPath": "./node_modules/prettier",
+        "[typescript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[jsonc]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        }
+      }
+    }
+  }
+}

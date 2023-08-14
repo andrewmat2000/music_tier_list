@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "DSaGFvS1TnxuqPRqISpbLqyNlaXH7KLkoucaVWk4rtQJmJZrLGCZUngV/LgBKt3hpqTxSiFDN5y1aTAzfP0lNA==",
+  "success": true,
+  "projectFilePath": "/home/andrey/projects/music_tier_list/Web/Web.csproj",
+  "expectedPackageFiles": [
+    "/home/andrey/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.7/microsoft.aspnetcore.app.ref.7.0.7.nupkg.sha512"
+  ],
+  "logs": []
+}
