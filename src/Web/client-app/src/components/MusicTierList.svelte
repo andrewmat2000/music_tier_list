@@ -1,14 +1,14 @@
 <script lang="ts" setup>
   import { get } from "svelte/store";
   import { tier_list_store } from "../lib/stores/tier_list_store";
+  import TierRow from "./TierRow.svelte";
 
   let tierList = get(tier_list_store);
-  tierList = tierList == undefined ? { cached: [], columns: [] } : tierList;
-  console.log(tierList);
 
   function addRow() {
-    console.log(tierList);
-    tierList.columns.push({});
+    tierList.columns.push({ name: "", songs: [] });
+
+    tier_list_store.set(tierList);
   }
 
   tier_list_store.subscribe(x => {
@@ -20,13 +20,11 @@
 </script>
 
 <div id="music-tier-list">
-  <table id="tier-table">
+  <table id="tier-table" class="table">
     <tbody>
-      {#if tierList != undefined}
-        {#each tierList.columns as item}
-          <div>{item}</div>
-        {/each}
-      {/if}
+      {#each tierList.columns as item}
+        <TierRow {item} />
+      {/each}
       <tr>
         <td><button on:click={() => addRow()}>+</button></td>
         <td />
@@ -41,12 +39,6 @@
     width: 100%;
     height: 100%;
     display: grid;
-  }
-  table,
-  th,
-  td {
-    border: 1px solid #a0a0a0;
-    border-collapse: collapse;
   }
   #tier-table {
     color: white;

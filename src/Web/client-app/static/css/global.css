@@ -1,3 +1,13 @@
 :root {
     background-color: #242424;
 }
+
+.table input {
+    background-color: transparent;
+    border: none;
+}
+
+.table tr,
+.table td {
+    outline: thin solid black;
+}

@@ -1,16 +1,21 @@
 import { writable, derived, get } from "svelte/store";
 
-interface ISong {
+export interface ISong {
   url?: string;
 }
 
-interface ITierList {
-  columns: ISong[];
-  cached: ISong[];
+export interface ITierColumn {
+  name: string;
+  songs: ISong[];
+}
+
+export interface ITierList {
+  columns: ITierColumn[];
+  cached: ITierColumn[];
 }
 
 function createTierListStore() {
-  const P = writable<ITierList>();
+  const P = writable({ cached: [], columns: [] } as ITierList);
   const { subscribe, set, update } = P;
 
   return {
