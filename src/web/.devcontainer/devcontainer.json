@@ -1,0 +1,23 @@
+{
+  "image": "node:21.6.0-alpine3.19",
+  "postAttachCommand": "npm i",
+  "customizations": {
+    "vscode": {
+      "extensions": ["svelte.svelte-vscode", "esbenp.prettier-vscode"],
+      "settings": {
+        "[typescript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[json]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[jsonc]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[svelte]": {
+          "editor.defaultFormatter": "svelte.svelte-vscode"
+        }
+      }
+    }
+  }
+}
